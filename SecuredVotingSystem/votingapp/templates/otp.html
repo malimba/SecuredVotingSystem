@@ -2,7 +2,7 @@
 {% load static %}
 {% block links %}
 <link href="{% static 'css/otp.css' %}" rel="stylesheet" type="text/css">
-<script src="{% static 'otp.min.js' %}"></script>
+<script src="{% static 'js/otp.min.js' %}"></script>
 {% endblock links %}
 {% block title %}
 OTP VERIFICATION
@@ -10,6 +10,7 @@ OTP VERIFICATION
 {% block body %}
 <div class="container">
     <h1 class="banner">OTP</h1>
-    <input type="text" class="otp-input" placeholder="Enter OTP">
+    {% csrf_token %}
+    <input id="otp" type="text" class="otp-input" placeholder="Enter OTP">
   </div>
 {% endblock body %}
