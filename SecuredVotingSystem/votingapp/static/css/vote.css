@@ -87,3 +87,32 @@ body {
   }
 }
 
+/* Add the following CSS rules to style the submit button */
+.submit-button {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 10px 20px;
+  background: linear-gradient(to right, #FFC107, #FF5722);
+  color: #FFF;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.submit-button:hover {
+  background: linear-gradient(to right, #FFA000, #F44336);
+  transform: scale(1.05);
+}
+
+.submit-button:focus {
+  outline: none;
+}
+
+.submit-button:active {
+  transform: scale(0.95);
+}

@@ -20,7 +20,7 @@
   {% for pres in presidents %}
 <div class="vote-option voting-div">
     <img class="voting-image" src="{{pres.photo}}" alt="Image 1">
-  <h5>{{pres.name}}</h5>
+  <h3>{{pres.name}}</h3>
     <button   class="voting-button">Vote</button>
   </div>
   {% endfor %}
@@ -38,21 +38,29 @@
     <h1>Vice President</h1>
 </div>
 <div class="main-content2">
+  {% if vices %}
+  {% for vice in vices %}
 <div class=" voting-div v2">
-    <img class="voting-image" src="{% static 'images/image1.jpg' %}" alt="Image 1">
+    <img class="voting-image" src="{{vice.photo}}" alt="Image ">
+  <h3>{{vice.name}}</h3>
     <button   class=" vb2">Vote</button>
   </div>
-
-  <div class=" voting-div v2">
-    <img class="voting-image" src="{% static 'images/image2.jpg' %}" alt="Image 2">
-    <button  class=" vb2">Vote</button>
-  </div>
-
-  <div class=" voting-div v2">
-    <img class="voting-image" src="{% static 'images/image3.jpg' %}" alt="Image 3">
-    <button  class=" vb2">Vote</button>
-  </div>
+  {% endfor %}
+  {% else %}
+  <div>
+  <div class="pos-banner">
+    <h1>No president in database</h1>
+</div>
+  {% endif %}
+</div>
 
 </div>
+</div>
+  <form id="vote-form" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <!-- Form fields here -->
+
+    <button id="submit-button" class="submit-button">Submit</button>
+  </form>
 </div>
 {% endblock body %}
