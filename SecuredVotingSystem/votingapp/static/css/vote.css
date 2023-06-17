@@ -5,11 +5,21 @@ body {
       background: linear-gradient(to bottom, #4B6CB7, #944BD4);
 
     }
-.main-content{
-    display: flex;
-      flex-wrap: wrap;
-      height: 100vh;
+.main-content1, .main-content2 {
+  margin-bottom: 40px;
 }
+
+.main-content1{
+     display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.main-content2{
+     display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
 .voting-div {
       width: 25%; /* Adjust the width as per your requirement */
       padding: 10px;
