@@ -20,7 +20,7 @@
   {% for pres in presidents %}
 <div class="vote-option voting-div">
     <img class="voting-image" src="{{pres.photo}}" alt="Image 1">
-  <h3>{{pres.name}}</h3>
+  <h3 class="name">{{pres.name}}</h3>
     <button   class="voting-button">Vote</button>
   </div>
   {% endfor %}
@@ -42,7 +42,7 @@
   {% for vice in vices %}
 <div class=" voting-div v2">
     <img class="voting-image" src="{{vice.photo}}" alt="Image ">
-  <h3>{{vice.name}}</h3>
+  <h3 class="name">{{vice.name}}</h3>
     <button   class=" vb2">Vote</button>
   </div>
   {% endfor %}
