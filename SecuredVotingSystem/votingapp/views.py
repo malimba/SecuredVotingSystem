@@ -54,4 +54,28 @@ def vote(request):
         context = {'presidents':president, 'vices':vice}
         return render(request, 'vote.html', context)
     if is_ajax(request) and request.method == 'POST':
-        print(request.POST)
+
+        #add votes to user
+        try:
+            print(request.POST)
+            votes =[]
+            for itm in request.POST:
+                if type(itm) == str:
+                    votes.append(itm.split(',')[0])
+                    votes.append(itm.split(',')[1])
+
+            successful_json = {'value':True}
+            print(votes)
+            #strip spaces
+            for v in votes:
+                votes[votes.index(v)] = v.replace(" ", "")
+            for v in votes:
+                print(v)
+                nomObj = VoteNominee.objects.get(name=str(v))
+                nomObj.votes = nomObj.votes +1
+                nomObj.save()
+            return HttpResponse(json.dumps(successful_json))
+        except Exception as e:
+            unsuccessful_json = {'value': False}
+            print(e)
+            return HttpResponse(json.dumps(unsuccessful_json))
