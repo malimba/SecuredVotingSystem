@@ -47,8 +47,32 @@ body {
       cursor: pointer; /* Cursor style */
       animation: bounce 1.5s infinite; /* Animation effect */
     }
-
+.voted{
+    background: linear-gradient(to bottom, #7FFF00, #006400);
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 50px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+}
     @keyframes bounce {
       0%, 100% { transform: translateY(0); }
       50% { transform: translateY(-5px); }
     }
+
+    @keyframes thanosSnap {
+  0% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0;
+    transform: scale(1.5);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+}

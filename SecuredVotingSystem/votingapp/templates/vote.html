@@ -18,19 +18,23 @@
 <div class="main-content">
 <div class="vote-option voting-div">
     <img class="voting-image" src="{% static 'images/image1.jpg' %}" alt="Image 1">
-    <button  onclick="voteClicked(this.parentNode)" id="voteButton" class="voting-button">Vote</button>
+    <button   class="voting-button">Vote</button>
   </div>
 
   <div class="vote-option voting-div">
     <img class="voting-image" src="{% static 'images/image2.jpg' %}" alt="Image 2">
-    <button onclick="voteClicked(this.parentNode)" class="voting-button">Vote</button>
+    <button  class="voting-button">Vote</button>
   </div>
 
   <div class="vote-option voting-div">
     <img class="voting-image" src="{% static 'images/image3.jpg' %}" alt="Image 3">
-    <button onclick="voteClicked(this.parentNode)" class="voting-button">Vote</button>
+    <button  class="voting-button">Vote</button>
   </div>
+        <div class="pos-banner">
+    <h1>President</h1>
 </div>
+</div>
+
 
 </div>
 {% endblock body %}
