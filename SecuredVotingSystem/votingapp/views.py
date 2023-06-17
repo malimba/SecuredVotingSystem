@@ -42,13 +42,16 @@ def add_nominee(request):
 
     return render(request, 'addnominee.html')
 def vote(request):
-    nominees = VoteNominee.objects.all()
-    president = list()
-    vice = list()
-    for nom in nominees:
-        if nom.position == 'president':
-            president.append(nom)
-        else:
-            vice.append(nom)
-    context = {'presidents':president, 'vices':vice}
-    return render(request, 'vote.html', context)
+    if request.method == 'GET':
+        nominees = VoteNominee.objects.all()
+        president = list()
+        vice = list()
+        for nom in nominees:
+            if nom.position == 'president':
+                president.append(nom)
+            else:
+                vice.append(nom)
+        context = {'presidents':president, 'vices':vice}
+        return render(request, 'vote.html', context)
+    if is_ajax(request) and request.method == 'POST':
+        print(request.POST)
