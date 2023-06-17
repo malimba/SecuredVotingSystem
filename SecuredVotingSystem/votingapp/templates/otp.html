@@ -1,0 +1,15 @@
+{% extends 'baselayout.html' %}
+{% load static %}
+{% block links %}
+<link href="{% static 'css/otp.css' %}" rel="stylesheet" type="text/css">
+<script src="{% static 'otp.min.js' %}"></script>
+{% endblock links %}
+{% block title %}
+OTP VERIFICATION
+{% endblock title %}
+{% block body %}
+<div class="container">
+    <h1 class="banner">OTP</h1>
+    <input type="text" class="otp-input" placeholder="Enter OTP">
+  </div>
+{% endblock body %}

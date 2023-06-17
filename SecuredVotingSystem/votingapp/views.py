@@ -9,5 +9,8 @@ def is_ajax(request):
 def Home(request):
     return render(request, 'index.html')
 
+def OTP(request):
+    if request.method == 'GET':
+        return render(request, 'otp.html')
 def vote(request):
     return render(request, 'index.html')

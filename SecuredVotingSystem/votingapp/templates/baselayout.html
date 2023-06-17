@@ -9,9 +9,9 @@
     <meta name="author" content="">
 
     <!--links-->
-    <link href="{% static 'css/baselayout.css' %}" rel="stylesheet" type="text/css">
+    {% block links %}<link href="{% static 'css/baselayout.css' %}" rel="stylesheet" type="text/css">{% endblock links %}
 
-    <title>E-voting App</title>
+    <title>{% block title %}E-voting App{% endblock title %}</title>
 </head>
 <body>
 {% block body %}
