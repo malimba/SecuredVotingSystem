@@ -46,7 +46,7 @@ body {
     }
 
 
- .voting-button {
+ .voting-button, .vb2 {
       background: linear-gradient(to bottom, #6495ED, #9370DB); /* Blue to Purple gradient button background */
       color: #fff; /* Text color */
       padding: 10px 20px; /* Button padding */
@@ -86,3 +86,4 @@ body {
     transform: scale(0.5);
   }
 }
+
