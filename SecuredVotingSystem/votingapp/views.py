@@ -1,7 +1,7 @@
 # imports
 from django.shortcuts import render, HttpResponse, redirect
 import json
-
+from .models import VoteNominee
 
 # Create your views here.
 # view to handle ajax request
@@ -29,5 +29,17 @@ def OTP(request):
             return HttpResponse(json.dumps(unsuccessful_json))
 
 
+def add_nominee(request):
+    if request.method == 'POST':
+        name = request.POST['name']
+        photo = request.FILES['photo']
+        position = request.POST['position']
+
+        nominee = VoteNominee(name=name, photo=photo, position=position)
+        nominee.save()
+
+        return redirect('votingapp:add_nominee')  # Redirect to a success page or the desired URL
+
+    return render(request, 'addnominee.html')
 def vote(request):
     return render(request, 'vote.html')

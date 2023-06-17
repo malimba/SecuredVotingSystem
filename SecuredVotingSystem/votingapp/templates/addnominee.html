@@ -1,0 +1,35 @@
+{% extends 'baselayout.html' %}
+{% load static %}
+{% block links %}
+<link href="{% static 'css/addnominee.css' %}" rel="stylesheet" type="text/css">
+{% endblock links %}
+{% block title %}Add Nominee{% endblock title %}
+{% block body %}
+ % block content %}
+  <h2>Add New Nominee</h2>
+
+  <form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input type="text" name="name" id="name" required>
+    </div>
+
+    <div class="form-group">
+      <label for="photo">Photo:</label>
+      <input type="file" name="photo" id="photo" required>
+    </div>
+
+    <div class="form-group">
+      <label for="position">Position:</label>
+      <select name="position" id="position" required>
+        <option value="">Select Position</option>
+        <option value="president">President</option>
+        <option value="vice_president">Vice President</option>
+      </select>
+    </div>
+
+    <button type="submit">Add Nominee</button>
+  </form>
+{% endblock %}
