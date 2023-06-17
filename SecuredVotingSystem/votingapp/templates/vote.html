@@ -16,20 +16,20 @@
     <h1>President</h1>
 </div>
 <div class="main-content1">
+  {% if presidents %}
+  {% for pres in presidents %}
 <div class="vote-option voting-div">
-    <img class="voting-image" src="{% static 'images/image1.jpg' %}" alt="Image 1">
+    <img class="voting-image" src="{{pres.photo}}" alt="Image 1">
+  <h5>{{pres.name}}</h5>
     <button   class="voting-button">Vote</button>
   </div>
-
-  <div class="vote-option voting-div">
-    <img class="voting-image" src="{% static 'images/image2.jpg' %}" alt="Image 2">
-    <button  class="voting-button">Vote</button>
-  </div>
-
-  <div class="vote-option voting-div">
-    <img class="voting-image" src="{% static 'images/image3.jpg' %}" alt="Image 3">
-    <button  class="voting-button">Vote</button>
-  </div>
+  {% endfor %}
+  {% else %}
+  <div>
+  <div class="pos-banner">
+    <h1>No president in database</h1>
+</div>
+  {% endif %}
 
 </div>
 </div>

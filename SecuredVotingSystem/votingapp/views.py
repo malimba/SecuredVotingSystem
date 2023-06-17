@@ -42,4 +42,13 @@ def add_nominee(request):
 
     return render(request, 'addnominee.html')
 def vote(request):
-    return render(request, 'vote.html')
+    nominees = VoteNominee.objects.all()
+    president = list()
+    vice = list()
+    for nom in nominees:
+        if nom.position == 'president':
+            president.append(nom)
+        else:
+            vice.append(nom)
+    context = {'presidents':president, 'vices':vice}
+    return render(request, 'vote.html', context)
