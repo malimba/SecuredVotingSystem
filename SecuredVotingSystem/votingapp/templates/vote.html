@@ -3,6 +3,7 @@
 {% load static %}
 {% block links %}
 <link href="{% static 'css/vote.css' %}" rel="stylesheet" type="text/css">
+<script src="{% static 'js/vote.min.js' %}"></script>
 {% endblock links %}
 {% block title %}Vote{% endblock title %}
 
@@ -15,20 +16,21 @@
     <h1>President</h1>
 </div>
 <div class="main-content">
-<div class="voting-div">
+<div class="vote-option voting-div">
     <img class="voting-image" src="{% static 'images/image1.jpg' %}" alt="Image 1">
-    <button class="voting-button">Vote</button>
+    <button  onclick="voteClicked()" class="voting-button">Vote</button>
   </div>
 
-  <div class="voting-div">
+  <div class="vote-option voting-div">
     <img class="voting-image" src="{% static 'images/image2.jpg' %}" alt="Image 2">
-    <button class="voting-button">Vote</button>
+    <button onclick="voteClicked()" class="voting-button">Vote</button>
   </div>
 
-  <div class="voting-div">
+  <div class="vote-option voting-div">
     <img class="voting-image" src="{% static 'images/image3.jpg' %}" alt="Image 3">
-    <button class="voting-button">Vote</button>
+    <button onclick="voteClicked()" class="voting-button">Vote</button>
   </div>
 </div>
+
 </div>
 {% endblock body %}
