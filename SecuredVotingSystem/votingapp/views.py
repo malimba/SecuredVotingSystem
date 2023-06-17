@@ -30,4 +30,4 @@ def OTP(request):
 
 
 def vote(request):
-    return render(request, 'index.html')
+    return render(request, 'vote.html')
